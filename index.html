@@ -3,25 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ff6b35">
-<title>Reading Log English Games</title>
+<title>규칙변화동사 붕어빵 게임</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--orange:#ff6b35;--deep:#c94a1d;--brown:#4a3b32;--cream:#fffaf0;--yellow:#ffd54f;--white:#fff;--blue:#8dd4ff;--purple:#d9c2ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:'Jua',sans-serif;color:var(--brown);background:radial-gradient(circle at 20% 10%,#fff8df 0 14%,transparent 15%),radial-gradient(circle at 85% 18%,#ffe5d3 0 12%,transparent 13%),linear-gradient(145deg,#fff7e8,#ffdec8);overflow-x:hidden}body:before,body:after{content:'🐟';position:fixed;font-size:140px;opacity:.06;z-index:-1;transform:rotate(-14deg)}body:before{left:-30px;bottom:5%}body:after{right:-35px;top:8%;transform:rotate(18deg)}.wrap{width:min(1080px,92%);margin:0 auto;padding:42px 0 56px}.brand{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:#fff;border:3px solid var(--brown);box-shadow:0 5px 0 var(--brown);font-family:'Nunito',sans-serif;font-weight:900}.hero{text-align:center;padding:44px 10px 30px}.hero-icon{font-size:84px;filter:drop-shadow(0 8px 0 rgba(74,59,50,.15));animation:bob 2.8s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}h1{font-size:clamp(34px,7vw,62px);line-height:1.08;margin:16px 0 12px;color:var(--deep);text-shadow:3px 3px 0 #ffd3bf}.subtitle{font-size:clamp(17px,3vw,23px);line-height:1.55;margin:0 auto;max-width:620px}.section-title{text-align:center;font-size:23px;margin:22px 0 18px}.category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.category-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:rgba(255,255,255,.94);border:5px solid var(--brown);border-radius:30px;padding:28px;box-shadow:0 11px 0 var(--brown);transition:.18s ease;position:relative;overflow:hidden;min-height:360px}.category-card:hover{transform:translateY(-4px);box-shadow:0 15px 0 var(--brown)}.category-card:active{transform:translateY(7px);box-shadow:0 4px 0 var(--brown)}.category-card:after{content:'1 → 5';position:absolute;right:-14px;top:14px;transform:rotate(8deg);background:var(--yellow);border:3px solid var(--brown);padding:7px 20px;font-family:'Nunito',sans-serif;font-weight:900}.category-card.irregular:after{background:var(--blue)}.card-top{display:flex;align-items:center;gap:18px}.card-icon{width:90px;height:90px;display:grid;place-items:center;border-radius:25px;background:linear-gradient(145deg,#ff875d,#ff5e29);font-size:48px;border:4px solid var(--brown);box-shadow:0 6px 0 var(--brown)}.irregular .card-icon{background:linear-gradient(145deg,#bca7ff,#7d65dc)}.card-copy{flex:1}.card-copy h2{font-size:clamp(27px,4vw,38px);margin:0 0 5px;color:var(--deep)}.irregular .card-copy h2{color:#5d43b6}.card-copy p{margin:0;font-size:18px;line-height:1.45}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{background:#fff3c7;border:2px solid var(--brown);border-radius:999px;padding:7px 12px;font-size:15px}.irregular .tag{background:#eee8ff}.cta{margin-top:auto;width:100%;border:4px solid var(--brown);border-radius:18px;background:var(--yellow);padding:14px 18px;text-align:center;font-size:21px;box-shadow:0 5px 0 var(--brown)}.irregular .cta{background:var(--blue)}footer{text-align:center;margin-top:42px;font-family:'Nunito',sans-serif;font-weight:800;color:#7c6253;font-size:14px}@media(max-width:820px){.category-grid{grid-template-columns:1fr}.category-card{min-height:0}}@media(max-width:560px){.wrap{padding-top:24px}.hero{padding-top:34px}.card-top{align-items:flex-start}.card-icon{width:72px;height:72px;font-size:38px}.category-card{padding:22px 18px}.category-card:after{font-size:13px;right:-17px}.tags{gap:6px}.tag{font-size:13px}}
+:root {
+  --orange:#ff6b35;
+  --deep:#d84a18;
+  --brown:#4a3428;
+  --cream:#fffaf0;
+  --yellow:#ffd54f;
+  --sky:#dff5ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--brown);
+  font-family:'Jua',sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%,rgba(255,255,255,.95) 0 5%,transparent 5.5%),
+    radial-gradient(circle at 88% 18%,rgba(255,255,255,.85) 0 4%,transparent 4.5%),
+    linear-gradient(180deg,var(--sky) 0 42%,#fff0d6 42% 100%);
+  overflow-x:hidden;
+}
+body::before{
+  content:'🐟';
+  position:fixed;
+  left:-18px;
+  bottom:4vh;
+  font-size:150px;
+  opacity:.08;
+  transform:rotate(-12deg);
+  pointer-events:none;
+}
+body::after{
+  content:'🐟';
+  position:fixed;
+  right:-28px;
+  top:6vh;
+  font-size:130px;
+  opacity:.08;
+  transform:scaleX(-1) rotate(-8deg);
+  pointer-events:none;
+}
+.wrap{
+  width:min(100% - 28px,900px);
+  margin:0 auto;
+  padding:42px 0 48px;
+  position:relative;
+  z-index:1;
+}
+.hero{text-align:center;margin-bottom:28px}
+.badge{
+  display:inline-block;
+  padding:8px 17px;
+  border:3px solid var(--brown);
+  border-radius:999px;
+  background:var(--yellow);
+  box-shadow:0 4px 0 var(--brown);
+  font-size:16px;
+  margin-bottom:18px;
+}
+h1{
+  margin:0;
+  color:var(--deep);
+  font-family:'Fredoka','Jua',sans-serif;
+  font-size:clamp(35px,7vw,62px);
+  line-height:1.08;
+  text-shadow:3px 3px 0 white;
+}
+.subtitle{margin:12px 0 0;font-size:clamp(17px,3vw,22px);line-height:1.5}
+.board{
+  padding:24px;
+  border:6px solid var(--brown);
+  border-radius:30px;
+  background:rgba(255,250,240,.96);
+  box-shadow:0 12px 0 var(--brown),0 22px 45px rgba(74,52,40,.16);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.game-card{
+  min-height:142px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px;
+  color:var(--brown);
+  text-decoration:none;
+  border:4px solid var(--brown);
+  border-radius:22px;
+  background:white;
+  box-shadow:0 7px 0 var(--brown);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  overflow:hidden;
+}
+.game-card:hover{transform:translateY(-3px);box-shadow:0 10px 0 var(--brown);background:#fff8e8}
+.game-card:active{transform:translateY(6px);box-shadow:0 1px 0 var(--brown)}
+.game-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 8px);width:100%;justify-self:center}
+.icon{
+  width:70px;height:70px;flex:0 0 70px;
+  display:grid;place-items:center;
+  border:3px solid var(--brown);
+  border-radius:50%;
+  background:linear-gradient(145deg,#ffd66b,#ff9e40);
+  font-size:40px;
+  box-shadow:inset 0 -5px 0 rgba(0,0,0,.08);
+}
+.info{min-width:0}
+.game-no{font-family:'Fredoka','Jua',sans-serif;font-weight:700;font-size:25px;color:var(--deep)}
+.range{font-size:18px;margin-top:4px}
+.words{font-size:14px;color:#806151;margin-top:5px}
+.arrow{margin-left:auto;font-size:27px;color:var(--orange)}
+.note{text-align:center;margin:24px 0 0;font-size:15px;color:#75594b}
+.brand{text-align:center;margin-top:24px;font-size:15px;font-family:'Fredoka','Jua',sans-serif;font-weight:600}
+@media(max-width:640px){
+  .wrap{padding-top:24px}
+  .board{padding:16px;border-width:5px;border-radius:24px;box-shadow:0 9px 0 var(--brown)}
+  .grid{grid-template-columns:1fr;gap:13px}
+  .game-card,.game-card:last-child:nth-child(odd){grid-column:auto;max-width:none;min-height:112px;padding:15px}
+  .icon{width:60px;height:60px;flex-basis:60px;font-size:34px}
+  .game-no{font-size:22px}
+  .range{font-size:16px}
+}
 </style>
 </head>
 <body>
 <main class="wrap">
-<div class="brand">📚 Reading Log English</div>
-<section class="hero"><div class="hero-icon">🏪🐟</div><h1>English Game Room</h1><p class="subtitle">게임으로 반복하고, 소리로 확인하며<br>영어가 자신감이 되는 연습 공간입니다.</p></section>
-<div class="section-title">배우고 싶은 게임을 선택하세요!</div>
-<section class="category-grid">
-<a class="category-card" href="regular-verbs.html" aria-label="규칙변화동사 게임 5개 선택하기"><div class="card-top"><div class="card-icon">🐟</div><div class="card-copy"><h2>규칙변화동사 게임</h2><p>Regular Verbs<br>기본형 · 과거형 · 과거분사</p></div></div><div class="tags"><span class="tag">총 98개 동사</span><span class="tag">5개 세트</span><span class="tag">뜻 고르기</span><span class="tag">🇺🇸 발음 듣기</span></div><div class="cta">5개의 게임 선택하기 →</div></a>
-<a class="category-card irregular" href="irregular-verbs.html" aria-label="불규칙동사 게임 5개 선택하기"><div class="card-top"><div class="card-icon">⚡</div><div class="card-copy"><h2>불규칙동사 게임</h2><p>Irregular Verbs<br>기본형 · 과거형 · 과거분사</p></div></div><div class="tags"><span class="tag">총 100개 동사</span><span class="tag">20개씩 5세트</span><span class="tag">뜻 고르기</span><span class="tag">🇺🇸 발음 듣기</span></div><div class="cta">5개의 게임 선택하기 →</div></a>
-</section>
-<footer>Where English becomes confidence.</footer>
+  <header class="hero">
+    <div class="badge">READING LOG ENGLISH</div>
+    <h1>규칙변화동사<br>붕어빵 게임</h1>
+    <p class="subtitle">연습할 단어 범위를 선택하세요!</p>
+  </header>
+
+  <section class="board" aria-label="게임 선택">
+    <div class="grid">
+      <a class="game-card" href="game1.html">
+        <span class="icon">🐟</span>
+        <span class="info"><span class="game-no">GAME 1</span><span class="range">Words 1–20</span><span class="words">use · want · look …</span></span>
+        <span class="arrow">▶</span>
+      </a>
+      <a class="game-card" href="game2.html">
+        <span class="icon">🐠</span>
+        <span class="info"><span class="game-no">GAME 2</span><span class="range">Words 21–40</span><span class="words">두 번째 단어 세트</span></span>
+        <span class="arrow">▶</span>
+      </a>
+      <a class="game-card" href="game3.html">
+        <span class="icon">🐡</span>
+        <span class="info"><span class="game-no">GAME 3</span><span class="range">Words 41–60</span><span class="words">세 번째 단어 세트</span></span>
+        <span class="arrow">▶</span>
+      </a>
+      <a class="game-card" href="game4.html">
+        <span class="icon">🐟</span>
+        <span class="info"><span class="game-no">GAME 4</span><span class="range">Words 61–80</span><span class="words">네 번째 단어 세트</span></span>
+        <span class="arrow">▶</span>
+      </a>
+      <a class="game-card" href="game5.html">
+        <span class="icon">🐠</span>
+        <span class="info"><span class="game-no">GAME 5</span><span class="range">Words 81–98</span><span class="words">마지막 단어 세트</span></span>
+        <span class="arrow">▶</span>
+      </a>
+    </div>
+    <p class="note">게임을 마친 뒤 왼쪽 위의 <strong>게임 선택</strong> 버튼을 누르면 이 화면으로 돌아옵니다.</p>
+  </section>
+  <div class="brand">Where English becomes confidence.</div>
 </main>
 </body>
 </html>
